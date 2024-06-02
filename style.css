@@ -6,11 +6,19 @@
   box-sizing: border-box;
 }
 
+.card {
+  transition: all 4s;
+}
+
+.card:hover {
+  width: 200px;
+}
+
 :root {
   font-size: 62.5%;
 
   --hue: 170;
-  --primary-color: hsl(var(--hue), 100%, 26%);
+  --primary-color: rgb(128, 128, 243);
   --headline: hsl(210, 11%, 15%);
   --paragraph: hsl(210, 9%, 31%);
   --brand-beige: hsl(39, 100%, 97%);
@@ -60,7 +68,7 @@ section {
 
 section header h4 {
   font-size: 1.4rem;
-  color: var(--primary-color);
+  color: white;
   margin-bottom: 1.6rem;
   font-weight: 700;
   letter-spacing: 0.08rem;
@@ -75,7 +83,7 @@ section header h2 {
 
 section header h1 {
   font-size: 3.4rem;
-  color: var(--headline);
+  color: white;
   line-height: 130%;
 }
 
@@ -102,11 +110,14 @@ section .content p {
   justify-content: center;
   gap: 1.6rem;
   text-decoration: none;
-  transition: background 200ms;
+  transition: 1s;
 }
 
 .button:hover {
-  background: var(--brand-dark);
+  background-color: white;
+  color: black;
+  border: solid 1px black;
+
 }
 
 .social-links {
@@ -180,7 +191,7 @@ body.menu-expanded {
   overflow: hidden;
 }
 
-body.menu-expanded > :not(nav) {
+body.menu-expanded> :not(nav) {
   visibility: hidden;
 }
 
@@ -269,13 +280,14 @@ body.menu-expanded button path {
 #home {
   padding-block: 0;
   padding-top: calc(4.1rem + var(--nav-height));
+  height: 900px;
 }
 
 #home::before {
   content: '';
   width: 100%;
   height: calc(76% + var(--nav-height));
-  background-color: var(--brand-light);
+  background-color: var(--primary-color);
   display: block;
   position: absolute;
   top: 0;
@@ -299,7 +311,8 @@ body.menu-expanded button path {
 }
 
 #home img {
-  width: 26.4rem;
+  height: 300px;
+
   display: block;
   margin-inline: auto;
   object-position: 0 2rem;
@@ -350,7 +363,11 @@ body.menu-expanded button path {
   background: white;
   border: 1px solid var(--brand-light);
   border-radius: 0.6rem;
+
+
 }
+
+
 
 #services .card h3 {
   margin-block: 1.6rem;
@@ -456,7 +473,7 @@ footer .social-links {
   }
 
   .wrapper {
-    width: min(112rem, 100%);
+    width: min(152rem, 100%);
     display: grid;
   }
 
@@ -514,7 +531,7 @@ footer .social-links {
 
   nav#navigation .menu ul li a {
     line-height: 2.1rem;
-    color: var(--primary-color);
+    color: white;
     opacity: 0.7;
   }
 
@@ -523,12 +540,12 @@ footer .social-links {
     justify-content: center;
     align-items: center;
     padding: 1rem 2.4rem;
-    color: var(--primary-color);
+    color: white;
     font-size: 1.4rem;
     font-weight: 700;
     line-height: 1.8rem;
     text-transform: uppercase;
-    border: 1px solid var(--primary-color);
+    border: 1px solid white;
     border-radius: 4rem;
   }
 
@@ -556,7 +573,7 @@ footer .social-links {
     content: '';
     width: 0%;
     height: 2px;
-    background-color: var(--primary-color);
+    background-color: black;
     display: block;
     position: relative;
     bottom: -2rem;
@@ -631,7 +648,7 @@ footer .social-links {
     gap: 0;
   }
 
-  #home .stats .stat + .stat {
+  #home .stats .stat+.stat {
     border-left: 1px solid var(--primary-color);
   }
 
@@ -644,7 +661,8 @@ footer .social-links {
   }
 
   #home img {
-    width: 42rem;
+    width: 62rem;
+    height: 42rem;
   }
 
   /*===SERVICES===*/
